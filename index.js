@@ -35,7 +35,7 @@ function setKey (binding, key, value) {
 function getBinding (type, client, id) {
   // validate we know about the type
   if (!fs.existsSync(path.join(__dirname, 'clients', type))) {
-    throw new Error('Unknown service type');
+    throw new Error('dummy dummy service type');
   }
 
   // validate that we know about the requested client
