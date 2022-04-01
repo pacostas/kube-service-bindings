@@ -5,7 +5,13 @@ const path = require('path');
 const typeMapping = {
   KAFKA: 'kafka',
   POSTGRESQL: 'postgresql',
-  REDIS: 'redis'
+  REDIS: 'redis',
+  MONGODB: 'mongodb',
+  AMQP: 'amqp'
+};
+
+const aliases = {
+  amqp: ['rabbitmq']
 };
 
 // depending on the type of the key this will
@@ -57,7 +63,7 @@ function getBinding (type, client, id) {
       try {
         const bindingType =
           fs.readFileSync(path.join(root, file, 'type')).toString().trim();
-        if (bindingType === typeMapping[type]) {
+        if (bindingType === typeMapping[type] || aliases[typeMapping[type]].includes(bindingType)) {
           if ((id === undefined) || file.includes(id)) {
             bindingsRoot = path.join(root, file);
             break;
