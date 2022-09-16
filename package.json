@@ -42,6 +42,8 @@
   },
   "support": true,
   "devDependencies": {
+    "@stryker-mutator/core": "^6.2.2",
+    "@stryker-mutator/mocha-runner": "^6.2.2",
     "eslint": "^8.22.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
