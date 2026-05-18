@@ -6,4 +6,4 @@ updates:
       interval: monthly
     commit-message:
       prefix: meta
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 11
